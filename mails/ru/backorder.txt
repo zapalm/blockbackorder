@@ -1,0 +1,8 @@
+Заказ на оборудование
+
+Оборудование: {product}
+Клиент: {name} {surname}
+Телефон: {phone}
+E-mail: {email}				
+Город: {city}
+Комментарий: {comment}
