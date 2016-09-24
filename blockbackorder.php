@@ -21,7 +21,6 @@ class BlockBackOrder extends Module
         $this->version       = '0.9';
         $this->author        = 'zapalm';
         $this->need_instance = 0;
-        $this->ps_versions_compliancy = array('min' => '1.2.0.0', 'max' => '1.6.1.0');
         $this->bootstrap     = false;
 
         parent::__construct();
