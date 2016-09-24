@@ -3,6 +3,6 @@
 Товар: {product}
 Клиент: {name} {surname}
 Телефон: {phone}
-E-mail: {email}				
+E-mail: {email}
 Город: {city}
 Комментарий: {comment}
