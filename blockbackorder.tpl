@@ -49,8 +49,9 @@
 {/literal}
 <div class="bo_div" id="bo_div">
     <div class="bo_title">{l s='back-order' mod='blockbackorder'}</div>
-    {if isset($error_code)}
-        <div class="{if $error_code > 0}error{else}success{/if}">{$msg}</div>{/if}
+    {if $errorCode !== null}
+        <div class="{if $errorCode > 0}error{else}success{/if}">{$message}</div>
+    {/if}
     <div class="bo_description">{l s='Input information to back-order' mod='blockbackorder'}</div>
     <form action="{$REQUEST_URI}" method="post">
         <label class="bo_label">{l s='Name' mod='blockbackorder'}</label>

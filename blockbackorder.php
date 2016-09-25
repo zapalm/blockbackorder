@@ -54,21 +54,21 @@ class BlockBackOrder extends Module
             return '';
         }
 
-        $error_code = null;
+        $errorCode = null;
         if (Tools::getIsset('bo_submit')) {
             if (Tools::getValue('firstname') && Tools::getValue('surname') && Tools::getValue('phone') && Tools::getValue('city') && Tools::getValue('comment') && Tools::getValue('email')) {
                 $sent = Mail::Send(
-                    intval($cookie->id_lang),
+                    (int)$cookie->id_lang,
                     'backorder',
                     $this->l('Back Order'),
                     array(
-                        '{firstname}' => Tools::getValue('firstname'),
-                        '{surname}' => Tools::getValue('surname'),
-                        '{email}' => Tools::getValue('email'),
-                        '{city}' => Tools::getValue('city'),
-                        '{phone}' => Tools::getValue('phone'),
-                        '{comment}' => Tools::getValue('comment'),
-                        '{product}' => $params['product']->name,
+                        '{firstname}'   => Tools::getValue('firstname'),
+                        '{surname}'     => Tools::getValue('surname'),
+                        '{email}'       => Tools::getValue('email'),
+                        '{city}'        => Tools::getValue('city'),
+                        '{phone}'       => Tools::getValue('phone'),
+                        '{comment}'     => Tools::getValue('comment'),
+                        '{product}'     => $product->name,
                     ),
                     Configuration::get('PS_SHOP_EMAIL'),
                     null,
@@ -79,25 +79,25 @@ class BlockBackOrder extends Module
                     _PS_MODULE_DIR_ . $this->name . '/mails/'
                 );
 
-                $error_code = $sent ? 0 : 2;
+                $errorCode = ($sent ? 0 : 2);
             } else {
-                $error_code = 1;
+                $errorCode = 1;
             }
         }
 
-        if ($error_code == 1) {
-            $msg = $this->l('All fields are requred.');
-        } elseif ($error_code == 2) {
-            $msg = $this->l('Unsuccesseful. Try again later.');
-        } elseif ($error_code == 0) {
-            $msg = $this->l('Successeful.');
+        if ($errorCode === 1) {
+            $message = $this->l('All fields are requred.');
+        } elseif ($errorCode === 2) {
+            $message = $this->l('Unsuccesseful. Try again later.');
+        } elseif ($errorCode === 0) {
+            $message = $this->l('Successeful.');
         } else {
-            $msg = '';
+            $message = '';
         }
 
         $smarty->assign(array(
-            'msg'        => $msg,
-            'error_code' => $error_code,
+            'message'    => $message,
+            'errorCode'  => $errorCode,
         ));
 
         return $this->display(__FILE__, 'blockbackorder.tpl');
