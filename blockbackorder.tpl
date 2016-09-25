@@ -1,14 +1,12 @@
 <!-- MODULE blockbackorder -->
 <script type="text/javascript">
 // <![CDATA[
-    {if $allow_oosp && $product->quantity == 0}
-        {literal}
-            $("document").ready(function () {
-                $("#add_to_cart").hide();
-                $("#bo_div").show();
-            });
-        {/literal}
-    {/if}
+    {literal}
+        $("document").ready(function () {
+            $("#add_to_cart").hide();
+            $("#bo_div").show();
+        });
+    {/literal}
 //]]>
 </script>
 

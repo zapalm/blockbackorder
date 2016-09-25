@@ -37,8 +37,22 @@ class BlockBackOrder extends Module
         return parent::uninstall();
     }
 
+    /**
+     * Hook ProductFooter.
+     *
+     * @param array $params
+     *
+     * @return string
+     */
     function hookProductFooter($params) {
         global $smarty, $cookie;
+
+        $product         = $params['product'];
+        $allowOutOfStock = 1;
+
+        if ($product->out_of_stock != $allowOutOfStock || $product->quantity > 0) {
+            return '';
+        }
 
         $error_code = null;
         if (Tools::getIsset('bo_submit')) {
