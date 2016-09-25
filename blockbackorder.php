@@ -23,7 +23,7 @@ class BlockBackOrder extends Module
     function __construct() {
         $this->name          = 'blockbackorder';
         $this->tab           = 'Payment';
-        $this->version       = '0.9';
+        $this->version       = '1.0.0';
         $this->author        = 'zapalm';
         $this->need_instance = 0;
         $this->bootstrap     = false;
