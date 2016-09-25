@@ -1,3 +1,12 @@
+{**
+* Block Back Order: module for PrestaShop 1.2-1.6
+*
+* @author      zapalm <zapalm@ya.ru>
+* @copyright   (c) 2011-2016, zapalm
+* @link        http://prestashop.modulez.ru/en/ Homepage
+* @license     http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
+*}
+
 <!-- MODULE blockbackorder -->
 <script type="text/javascript">
 // <![CDATA[

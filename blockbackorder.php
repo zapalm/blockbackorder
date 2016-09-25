@@ -3,18 +3,23 @@
  * Block Back Order: module for PrestaShop 1.2-1.6
  *
  * @author      zapalm <zapalm@ya.ru>
- * @copyright   (c) 2011-2015, zapalm
+ * @copyright   (c) 2011-2016, zapalm
  * @link        http://prestashop.modulez.ru/en/ Homepage
  * @license     http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
- * @version     0.9
  */
 
 if (!defined('_PS_VERSION_')) {
     exit;
 }
 
+/**
+ * @inheritdoc
+ */
 class BlockBackOrder extends Module
 {
+    /**
+     * @inheritdoc
+     */
     function __construct() {
         $this->name          = 'blockbackorder';
         $this->tab           = 'Payment';
@@ -29,10 +34,16 @@ class BlockBackOrder extends Module
         $this->description = $this->l('Allow to back-ordering when a product out of stock');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function install() {
         return parent::install() && $this->registerHook('productfooter');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function uninstall() {
         return parent::uninstall();
     }
