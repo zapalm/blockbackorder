@@ -13,7 +13,6 @@
     {literal}
         $("document").ready(function () {
             $("#add_to_cart").hide();
-            $("#bo_div").show();
         });
     {/literal}
 //]]>
@@ -51,38 +50,59 @@
         div.bo_div {
             padding-bottom: 10px;
             padding-top: 10px;
-            display: none;
+        }
+        div.margin-form {
+            display: block;
+            float: left;
+            clear: both;
+            margin-bottom: 5px;
+        }
+        form.bo-form {
+
         }
         -->
     </STYLE>
 {/literal}
 <div class="bo_div" id="bo_div">
-    <div class="bo_title">{l s='back-order' mod='blockbackorder'}</div>
+    <h3 class="bo_title">{l s='Product pre-order' mod='blockbackorder'}</h3>
     {if $message !== null}
-        <div class="{if $hasError}error{else}success{/if}">{$message}</div>
+        <div class="{if $hasError}error alert alert-danger{else}success alert alert-success{/if}">{$message}</div>
     {/if}
-    <div class="bo_description">{l s='Input information to back-order' mod='blockbackorder'}</div>
-    <form action="{$REQUEST_URI}" method="post">
-        <label class="bo_label">{l s='Name' mod='blockbackorder'}</label>
-        <input class="text" type="text" value="{$smarty.post.firstname}" name="firstname">
-        <br/><br/>
-        <label class="bo_label">{l s='Surname' mod='blockbackorder'}</label>
-        <input class="text" type="text" value="{$smarty.post.surname}" name="surname">
-        <br/><br/>
-        <label class="bo_label">{l s='Phone' mod='blockbackorder'}</label>
-        <input class="text" type="text" value="{$smarty.post.phone}" name="phone">
-        <br/><br/>
-        <label class="bo_label">{l s='E-mail' mod='blockbackorder'}</label>
-        <input class="text" type="text" value="{$smarty.post.email}" name="email">
-        <br/><br/>
-        <label class="bo_label">{l s='City' mod='blockbackorder'}</label>
-        <input class="text" type="text" value="{$smarty.post.city}" name="city">
-        <br/><br/>
-        <label class="bo_label">{l s='Comment' mod='blockbackorder'}</label>
-        <textarea cols="60" rows="3" name="comment">{$smarty.post.comment}</textarea>
-        <br/><br/>
-        <center><input type="submit" name="bo_submit" value="{l s='Submit' mod='blockbackorder'}" class="button"/>
-        </center>
+    <div class="bo_description">{l s='Please fill all fields for the product pre-order.' mod='blockbackorder'}</div>
+    <form class="bo-form" action="#bo_div" method="post">
+        <div class="margin-form">
+            <label class="bo_label">{l s='Name' mod='blockbackorder'}</label>
+            <input class="text form-control" type="text" value="{if isset($smarty.post.firstname)}{$smarty.post.firstname}{/if}" name="firstname">
+        </div>
+
+        <div class="margin-form">
+            <label class="bo_label">{l s='Surname' mod='blockbackorder'}</label>
+            <input class="text form-control" type="text" value="{if isset($smarty.post.surname)}{$smarty.post.surname}{/if}" name="surname">
+        </div>
+
+        <div class="margin-form">
+            <label class="bo_label">{l s='Phone' mod='blockbackorder'}</label>
+            <input class="text form-control" type="text" value="{if isset($smarty.post.phone)}{$smarty.post.phone}{/if}" name="phone">
+        </div>
+
+        <div class="margin-form">
+            <label class="bo_label">{l s='E-mail' mod='blockbackorder'}</label>
+            <input class="text form-control" type="text" value="{if isset($smarty.post.email)}{$smarty.post.email}{/if}" name="email">
+        </div>
+
+        <div class="margin-form">
+            <label class="bo_label">{l s='City' mod='blockbackorder'}</label>
+            <input class="text form-control" type="text" value="{if isset($smarty.post.city)}{$smarty.post.city}{/if}" name="city">
+        </div>
+
+        <div class="margin-form">
+            <label class="bo_label">{l s='Comment' mod='blockbackorder'}</label>
+            <textarea class="form-control" cols="60" rows="3" name="comment">{if isset($smarty.post.comment)}{$smarty.post.comment}{/if}</textarea>
+        </div>
+
+        <div class="margin-form">
+            <input type="submit" name="bo_submit" value="{l s='Submit' mod='blockbackorder'}" class="button"/>
+        </div>
     </form>
 </div>
 <!-- /MODULE blockbackorder -->

@@ -8,8 +8,7 @@ $_MODULE['<{blockbackorder}prestashop>blockbackorder_e5cad1a2c134f079daf8fed3018
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_cf63e24584edebcb0ed5d6f31870f745'] = 'Заявка отправлена.';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_9a1ada91b327fb05080e7b9d8468477f'] = 'Произошла ошибка отправки заявки.';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_d44fb71cb2a03fc64a971307e4fd83bb'] = 'Все поля обязательные.';
-$_MODULE['<{blockbackorder}prestashop>blockbackorder_c2e924fa4ebac82470869dd8bada7600'] = 'Форма заказа';
-$_MODULE['<{blockbackorder}prestashop>blockbackorder_7e12dcf54cf118e0a4a8e29ff117cfc0'] = 'Заполните форму заказа товара';
+$_MODULE['<{blockbackorder}prestashop>blockbackorder_59f119f4c6586c8cd04ce20a2ec8e92b'] = 'Пожалуйста, заполните все поля для предзаказа товара.';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_49ee3087348e8d44e1feda1917443987'] = 'Имя';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_8e55577a8ed3b20bff65d23c000280d4'] = 'Фамилия';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_bcc254b55c4a1babdf1dcb82c207506b'] = 'Телефон';
