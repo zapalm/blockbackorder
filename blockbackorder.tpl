@@ -49,8 +49,8 @@
 {/literal}
 <div class="bo_div" id="bo_div">
     <div class="bo_title">{l s='back-order' mod='blockbackorder'}</div>
-    {if $errorCode !== null}
-        <div class="{if $errorCode > 0}error{else}success{/if}">{$message}</div>
+    {if $message !== null}
+        <div class="{if $hasError}error{else}success{/if}">{$message}</div>
     {/if}
     <div class="bo_description">{l s='Input information to back-order' mod='blockbackorder'}</div>
     <form action="{$REQUEST_URI}" method="post">

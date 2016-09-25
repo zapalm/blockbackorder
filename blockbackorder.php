@@ -54,7 +54,9 @@ class BlockBackOrder extends Module
             return '';
         }
 
-        $errorCode = null;
+        $message  = null;
+        $hasError = false;
+
         if (Tools::getIsset('bo_submit')) {
             if (Tools::getValue('firstname') && Tools::getValue('surname') && Tools::getValue('phone') && Tools::getValue('city') && Tools::getValue('comment') && Tools::getValue('email')) {
                 $sent = Mail::Send(
@@ -79,25 +81,21 @@ class BlockBackOrder extends Module
                     _PS_MODULE_DIR_ . $this->name . '/mails/'
                 );
 
-                $errorCode = ($sent ? 0 : 2);
+                if ($sent) {
+                    $message = $this->l('Successeful.');
+                } else {
+                    $message  = $this->l('Unsuccesseful. Try again later.');
+                    $hasError = true;
+                }
             } else {
-                $errorCode = 1;
+                $message  = $this->l('All fields are requred.');
+                $hasError = true;
             }
-        }
-
-        if ($errorCode === 1) {
-            $message = $this->l('All fields are requred.');
-        } elseif ($errorCode === 2) {
-            $message = $this->l('Unsuccesseful. Try again later.');
-        } elseif ($errorCode === 0) {
-            $message = $this->l('Successeful.');
-        } else {
-            $message = '';
         }
 
         $smarty->assign(array(
             'message'    => $message,
-            'errorCode'  => $errorCode,
+            'hasError'   => $hasError,
         ));
 
         return $this->display(__FILE__, 'blockbackorder.tpl');
