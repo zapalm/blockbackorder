@@ -82,13 +82,13 @@ class BlockBackOrder extends Module
                 );
 
                 if ($sent) {
-                    $message = $this->l('Successeful.');
+                    $message = $this->l('Successful.');
                 } else {
-                    $message  = $this->l('Unsuccesseful. Try again later.');
+                    $message  = $this->l('Unsuccessful. Try again later.');
                     $hasError = true;
                 }
             } else {
-                $message  = $this->l('All fields are requred.');
+                $message  = $this->l('All fields are required.');
                 $hasError = true;
             }
         }

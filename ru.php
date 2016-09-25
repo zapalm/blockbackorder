@@ -2,12 +2,12 @@
 
 global $_MODULE;
 $_MODULE = array();
-$_MODULE['<{blockbackorder}prestashop>blockbackorder_30bf4cb78ade00b21717fcd168a3f9be'] = 'Заказ при наличии';
+$_MODULE['<{blockbackorder}prestashop>blockbackorder_30bf4cb78ade00b21717fcd168a3f9be'] = 'Предзаказ товара';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_deb04f239dd2945e95e92dd44c9bae62'] = 'Позволяет оставить заявку на товар, которого пока нет в наличии';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_bec715e18172248f95f9ef436944042e'] = 'Под заказ';
-$_MODULE['<{blockbackorder}prestashop>blockbackorder_35df4f94e18fe021af7dfc5c5315b9aa'] = 'Все поля обязательные.';
-$_MODULE['<{blockbackorder}prestashop>blockbackorder_9d4466fabb9ab94f2b4f9ab17d78c959'] = 'Заказ не отправлен. Попробуйте еще раз.';
-$_MODULE['<{blockbackorder}prestashop>blockbackorder_b22fa58b744a6e686c08e7cb2388d7c1'] = 'Отправлен.';
+$_MODULE['<{blockbackorder}prestashop>blockbackorder_cf63e24584edebcb0ed5d6f31870f745'] = 'Заявка отправлена.';
+$_MODULE['<{blockbackorder}prestashop>blockbackorder_9a1ada91b327fb05080e7b9d8468477f'] = 'Произошла ошибка отправки заявки.';
+$_MODULE['<{blockbackorder}prestashop>blockbackorder_d44fb71cb2a03fc64a971307e4fd83bb'] = 'Все поля обязательные.';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_c2e924fa4ebac82470869dd8bada7600'] = 'Форма заказа';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_7e12dcf54cf118e0a4a8e29ff117cfc0'] = 'Заполните форму заказа товара';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_49ee3087348e8d44e1feda1917443987'] = 'Имя';
