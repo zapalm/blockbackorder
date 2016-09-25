@@ -1,0 +1,8 @@
+Product pre-order
+
+Product: {product}
+Customer: {name} {surname}
+Phone: {phone}
+E-mail: {email}
+City: {city}
+Comment: {comment}

@@ -4,7 +4,7 @@ global $_MODULE;
 $_MODULE = array();
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_30bf4cb78ade00b21717fcd168a3f9be'] = 'Предзаказ товара';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_deb04f239dd2945e95e92dd44c9bae62'] = 'Позволяет оставить заявку на товар, которого пока нет в наличии';
-$_MODULE['<{blockbackorder}prestashop>blockbackorder_bec715e18172248f95f9ef436944042e'] = 'Под заказ';
+$_MODULE['<{blockbackorder}prestashop>blockbackorder_e5cad1a2c134f079daf8fed3018f1f43'] = 'Предзаказ товара';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_cf63e24584edebcb0ed5d6f31870f745'] = 'Заявка отправлена.';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_9a1ada91b327fb05080e7b9d8468477f'] = 'Произошла ошибка отправки заявки.';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_d44fb71cb2a03fc64a971307e4fd83bb'] = 'Все поля обязательные.';

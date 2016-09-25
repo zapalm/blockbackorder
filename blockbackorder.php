@@ -73,7 +73,7 @@ class BlockBackOrder extends Module
                 $sent = Mail::Send(
                     (int)$cookie->id_lang,
                     'backorder',
-                    $this->l('Back Order'),
+                    $this->l('Product pre-order'),
                     array(
                         '{firstname}'   => Tools::getValue('firstname'),
                         '{surname}'     => Tools::getValue('surname'),
