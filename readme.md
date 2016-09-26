@@ -4,7 +4,7 @@ Block Back-order: module for Prestashop
 Description
 ------------
 This is a module for [PrestaShop][4] e-commerce solution (v1.2-1.6) that allows to back-ordering when a product out of stock.
-More info: http://prestashop.modulez.ru/en/
+More info: http://prestashop.modulez.ru/en/frontend-features/40-pre-order-form.html
 
 Installation & Update
 ------------
