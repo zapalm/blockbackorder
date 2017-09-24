@@ -23,7 +23,7 @@ class BlockBackOrder extends Module
     function __construct() {
         $this->name          = 'blockbackorder';
         $this->tab           = 'Payment';
-        $this->version       = '1.0.0';
+        $this->version       = '1.1.0';
         $this->author        = 'zapalm';
         $this->need_instance = 0;
         $this->bootstrap     = false;
@@ -49,19 +49,59 @@ class BlockBackOrder extends Module
     }
 
     /**
+     * Hook ExtraRight.
+     *
+     * @param array $params
+     *
+     * @return string
+     */
+    public function hookExtraRight($params) {
+        $params['product'] = new Product((int)Tools::getValue('id_product'));
+
+        return $this->hookProductFooter($params);
+    }
+
+    /**
+     * Hook ExtraLeft.
+     *
+     * @param array $params
+     *
+     * @return string
+     */
+    public function hookExtraLeft($params) {
+        $params['product'] = new Product((int)Tools::getValue('id_product'));
+
+        return $this->hookProductFooter($params);
+    }
+
+    /**
      * Hook ProductFooter.
      *
      * @param array $params
      *
      * @return string
      */
-    function hookProductFooter($params) {
+    public function hookProductFooter($params) {
         global $smarty, $cookie;
 
-        $product         = $params['product'];
-        $allowOutOfStock = 1;
+        $product = $params['product'];
 
-        if ($product->out_of_stock != $allowOutOfStock || $product->quantity > 0) {
+        if ($product->quantity > 0) {
+            return '';
+        }
+
+        $productOutOfStock = (int)$product->out_of_stock;
+        if (0 === $productOutOfStock) {
+            return '';
+        }
+
+        $stockManagement = (bool)Configuration::get('PS_STOCK_MANAGEMENT');
+        $allowOutOfStock = false;
+        if (false === $stockManagement || 1 === $productOutOfStock || (2 === $productOutOfStock && true === (bool)Configuration::get('PS_ORDER_OUT_OF_STOCK'))) {
+            $allowOutOfStock = true;
+        }
+
+        if (false === $allowOutOfStock) {
             return '';
         }
 
