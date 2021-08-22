@@ -1,0 +1,17 @@
+{
+  "name": "zapalm/blockbackorder",
+  "type": "prestashop-module",
+  "homepage": "https://prestashop.modulez.ru/en/express-order-checkout/40-pre-order-form.html",
+  "authors": [
+    {
+      "name": "Maksim T.",
+      "email": "zapalm@yandex.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4"
+  },
+  "config": {
+    "preferred-install": "dist"
+  }
+}
