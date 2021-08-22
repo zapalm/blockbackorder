@@ -17,6 +17,9 @@ if (!defined('_PS_VERSION_')) {
  */
 class BlockBackOrder extends Module
 {
+    /** The product ID of the module on its homepage. */
+    const HOMEPAGE_PRODUCT_ID = 40;
+
     /**
      * @inheritdoc
      */
@@ -35,17 +38,35 @@ class BlockBackOrder extends Module
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
-    public function install() {
-        return parent::install() && $this->registerHook('productfooter');
+    public function install()
+    {
+        $result = parent::install();
+
+        if ($result) {
+            $result = (bool)$this->registerHook('productfooter');
+        }
+
+        $this->registerModuleOnQualityService('installation');
+
+        return $result;
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
-    public function uninstall() {
-        return parent::uninstall();
+    public function uninstall()
+    {
+        $result = (bool)parent::uninstall();
+
+        $this->registerModuleOnQualityService('uninstallation');
+
+        return $result;
     }
 
     /**
@@ -150,5 +171,35 @@ class BlockBackOrder extends Module
         ));
 
         return $this->display(__FILE__, 'blockbackorder.tpl');
+    }
+
+    /**
+     * Registers current module installation/uninstallation in the quality service.
+     *
+     * This method is needed for a developer to quickly find out about a problem with installing or uninstalling a module.
+     *
+     * @param string $operation The operation. Possible values: installation, uninstallation.
+     *
+     * @author Maksim T. <zapalm@yandex.com>
+     */
+    private function registerModuleOnQualityService($operation)
+    {
+        @file_get_contents('https://prestashop.modulez.ru/scripts/quality-service/index.php?' . http_build_query([
+            'data' => json_encode([
+                'productId'           => self::HOMEPAGE_PRODUCT_ID,
+                'productSymbolicName' => $this->name,
+                'productVersion'      => $this->version,
+                'operation'           => $operation,
+                'status'              => (empty($this->_errors) ? 'success' : 'error'),
+                'message'             => (false === empty($this->_errors) ? strip_tags(stripslashes(implode(' ', (array)$this->_errors))) : ''),
+                'prestashopVersion'   => _PS_VERSION_,
+                'thirtybeesVersion'   => (defined('_TB_VERSION_') ? _TB_VERSION_ : ''),
+                'shopDomain'          => (method_exists('Tools', 'getShopDomain') && Tools::getShopDomain() ? Tools::getShopDomain() : (Configuration::get('PS_SHOP_DOMAIN') ? Configuration::get('PS_SHOP_DOMAIN') : Tools::getHttpHost())),
+                'shopEmail'           => Configuration::get('PS_SHOP_EMAIL'), // This public e-mail from a shop's contacts can be used by a developer to send only an urgent information about security issue of a module!
+                'phpVersion'          => PHP_VERSION,
+                'ioncubeVersion'      => (function_exists('ioncube_loader_iversion') ? ioncube_loader_iversion() : ''),
+                'languageIsoCode'     => Language::getIsoById(false === empty($GLOBALS['cookie']->id_lang) ? $GLOBALS['cookie']->id_lang : Context::getContext()->language->id),
+            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
+        ]));
     }
 }
