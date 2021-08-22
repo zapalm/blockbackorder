@@ -31,7 +31,7 @@ class BlockBackOrder extends Module
     {
         $this->name          = 'blockbackorder';
         $this->tab           = (version_compare(_PS_VERSION_, '1.4', '>=') ? 'payments_gateways' : 'Payment');
-        $this->version       = '1.1.0';
+        $this->version       = '1.4.0';
         $this->author        = 'zapalm';
         $this->need_instance = 0;
         $this->bootstrap     = false;
