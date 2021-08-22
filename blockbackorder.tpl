@@ -1,11 +1,11 @@
 {**
-* Block Back Order: module for PrestaShop 1.2-1.6
-*
-* @author      zapalm <zapalm@ya.ru>
-* @copyright   (c) 2011-2016, zapalm
-* @link        http://prestashop.modulez.ru/en/frontend-features/40-pre-order-form.html Module's homepage
-* @license     http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
-*}
+ * Block back order: module for PrestaShop.
+ *
+ * @author    Maksim T. <zapalm@yandex.com>
+ * @copyright 2011 Maksim T.
+ * @link      https://prestashop.modulez.ru/en/express-order-checkout/40-pre-order-form.html The module's homepage
+ * @license   https://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
+ *}
 
 <!-- MODULE blockbackorder -->
 <script type="text/javascript">

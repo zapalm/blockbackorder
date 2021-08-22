@@ -1,11 +1,11 @@
 <?php
 /**
- * Block Back Order: module for PrestaShop 1.2-1.6
+ * Block back order: module for PrestaShop.
  *
- * @author      zapalm <zapalm@ya.ru>
- * @copyright   (c) 2011-2016, zapalm
- * @link        http://prestashop.modulez.ru/en/frontend-features/40-pre-order-form.html Module's homepage
- * @license     http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
+ * @author    Maksim T. <zapalm@yandex.com>
+ * @copyright 2011 Maksim T.
+ * @link      https://prestashop.modulez.ru/en/express-order-checkout/40-pre-order-form.html The module's homepage
+ * @license   https://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
  */
 
 if (!defined('_PS_VERSION_')) {
@@ -13,7 +13,9 @@ if (!defined('_PS_VERSION_')) {
 }
 
 /**
- * @inheritdoc
+ * Module BlockBackOrder.
+ *
+ * @author Maksim T. <zapalm@yandex.com>
  */
 class BlockBackOrder extends Module
 {
@@ -21,9 +23,12 @@ class BlockBackOrder extends Module
     const HOMEPAGE_PRODUCT_ID = 40;
 
     /**
-     * @inheritdoc
+     * @inheritDoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
-    function __construct() {
+    public function __construct()
+    {
         $this->name          = 'blockbackorder';
         $this->tab           = 'Payment';
         $this->version       = '1.1.0';
@@ -75,8 +80,11 @@ class BlockBackOrder extends Module
      * @param array $params
      *
      * @return string
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
-    public function hookExtraRight($params) {
+    public function hookExtraRight($params)
+    {
         $params['product'] = new Product((int)Tools::getValue('id_product'));
 
         return $this->hookProductFooter($params);
@@ -88,8 +96,11 @@ class BlockBackOrder extends Module
      * @param array $params
      *
      * @return string
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
-    public function hookExtraLeft($params) {
+    public function hookExtraLeft($params)
+    {
         $params['product'] = new Product((int)Tools::getValue('id_product'));
 
         return $this->hookProductFooter($params);
@@ -101,8 +112,11 @@ class BlockBackOrder extends Module
      * @param array $params
      *
      * @return string
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
-    public function hookProductFooter($params) {
+    public function hookProductFooter($params)
+    {
         global $smarty, $cookie;
 
         $product = $params['product'];
