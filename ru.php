@@ -16,3 +16,8 @@ $_MODULE['<{blockbackorder}prestashop>blockbackorder_1e884e3078d9978e216a027ecd5
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_57d056ed0984166336b7879c2af3657f'] = 'Город';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_0be8406951cdfda82f00f79328cf4efc'] = 'Комментарий';
 $_MODULE['<{blockbackorder}prestashop>blockbackorder_a4d3b161ce1309df1c4e25df28694b7b'] = 'Отправить';
+$_MODULE['<{blockbackorder}prestashop>blockbackorder_77abd48d0a4b2599252746283cf415bd'] = 'Информация о модуле';
+$_MODULE['<{blockbackorder}prestashop>blockbackorder_34b6cd75171affba6957e308dcbd92be'] = 'Версия';
+$_MODULE['<{blockbackorder}prestashop>blockbackorder_794df3791a8c800841516007427a2aa3'] = 'Лицензия';
+$_MODULE['<{blockbackorder}prestashop>blockbackorder_15bbb9d0bbf25e8d2978de1168c749dc'] = 'Сайт';
+$_MODULE['<{blockbackorder}prestashop>blockbackorder_a517747c3d12f99244ae598910d979c5'] = 'Автор';
