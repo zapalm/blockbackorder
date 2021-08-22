@@ -149,7 +149,7 @@ class BlockBackOrder extends Module
                     (int)$cookie->id_lang,
                     'backorder',
                     $this->l('Product pre-order'),
-                    array(
+                    [
                         '{firstname}'   => Tools::getValue('firstname'),
                         '{surname}'     => Tools::getValue('surname'),
                         '{email}'       => Tools::getValue('email'),
@@ -157,7 +157,7 @@ class BlockBackOrder extends Module
                         '{phone}'       => Tools::getValue('phone'),
                         '{comment}'     => Tools::getValue('comment'),
                         '{product}'     => $product->name,
-                    ),
+                    ],
                     Configuration::get('PS_SHOP_EMAIL'),
                     null,
                     null,
@@ -179,10 +179,10 @@ class BlockBackOrder extends Module
             }
         }
 
-        $smarty->assign(array(
+        $smarty->assign([
             'message'    => $message,
             'hasError'   => $hasError,
-        ));
+        ]);
 
         return $this->display(__FILE__, 'blockbackorder.tpl');
     }
