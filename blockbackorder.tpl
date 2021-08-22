@@ -1,5 +1,5 @@
 {**
- * Block back order: module for PrestaShop.
+ * Pre-order form: module for PrestaShop.
  *
  * @author    Maksim T. <zapalm@yandex.com>
  * @copyright 2011 Maksim T.

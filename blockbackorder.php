@@ -1,6 +1,6 @@
 <?php
 /**
- * Block back order: module for PrestaShop.
+ * Pre-order form: module for PrestaShop.
  *
  * @author    Maksim T. <zapalm@yandex.com>
  * @copyright 2011 Maksim T.
@@ -30,7 +30,7 @@ class BlockBackOrder extends Module
     public function __construct()
     {
         $this->name          = 'blockbackorder';
-        $this->tab           = 'Payment';
+        $this->tab           = (version_compare(_PS_VERSION_, '1.4', '>=') ? 'payments_gateways' : 'Payment');
         $this->version       = '1.1.0';
         $this->author        = 'zapalm';
         $this->need_instance = 0;
@@ -38,7 +38,7 @@ class BlockBackOrder extends Module
 
         parent::__construct();
 
-        $this->displayName = $this->l('Block Back-order');
+        $this->displayName = $this->l('Pre-order form');
         $this->description = $this->l('Allow to back-ordering when a product out of stock');
     }
 
